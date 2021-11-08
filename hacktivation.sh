@@ -90,6 +90,7 @@ echo -e "$CYAN 4 : PAID Untethered Bypass iOS 13.0 > [OC34N ACTIVATION SERVER]$N
 echo -e "$CYAN 5 : FREE Tethered Bypass iOS 13.0 > [PATCHED MOBILEACTIVATIOND]$NC"
 echo -e "$CYAN 6 : FREE Tethered Bypass iOS 12.4.7 > [PATCHED MOBILEACTIVATIOND]$NC"
 echo -e "$CYAN 7 : SSH Shell$NC"
+echo -e "$CYAN 8 : Save Ramdisk$NC"
 echo -e "$CYAN 0 : Exit$NC"
 echo ' ----------------------------------------------------------------------'
 read -p " Choose >  " ch
@@ -185,6 +186,11 @@ continueOrExit
 elif [ $ch == 0 ]; then
       echo -e "$RED Program Exit ...$NC"
       exit 1
+      
+elif [ $ch = 7 ]; then
+
+echo ""
+mv ~/setupapp.save/ ~/setupapp/
 else
       echo "Option not found. Exiting"
 fi
