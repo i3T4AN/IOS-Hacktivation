@@ -70,6 +70,11 @@ SerialNumber=$(ideviceinfo | grep -w SerialNumber | awk '{print $NF}')
 ProductType=$(ideviceinfo | grep ProductType | awk '{print $NF}')
 ProductVersion=$(ideviceinfo | grep ProductVersion | awk '{print $NF}')
 
+if test -z activation ios == 15.5>15.0.1b3 && activation ios type =< A11
+      print ("device not compatable with checkm8 resources")
+      else :
+   ()
+   
 if test -z "$ActivationState" 
 then
       echo ' ----------------------------------------------------------------------'
