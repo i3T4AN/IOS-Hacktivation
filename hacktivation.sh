@@ -61,7 +61,7 @@ echo " ********************** iOS Hacktivation Toolkit **********************"
 echo -e " **********************************************************************$NC"
 echo -e " [+]$GREEN        This software is maintained by SRS appsec@tuta.io$NC       [+]"
 echo -e " [+]$GREEN    Thanks to$NC :$GREEN @exploit3dguy + @appletech752 + @iRogerosx $NC     [+]"
-echo -e " [+]$GREEN    @SoNick_14 + Ethan BLair + Thelittlechicken + iGerman00 $NC     [+]"
+echo -e " [+]$GREEN    @SoNick_14 + Ethan BLair + appletechrr + iGerman00 $NC     [+]"
 
 ActivationState=$(ideviceinfo | grep ActivationState: | awk '{print $NF}')
 DeviceName=$(ideviceinfo | grep DeviceName | awk '{print $NF}')
