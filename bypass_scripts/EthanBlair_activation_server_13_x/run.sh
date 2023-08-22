@@ -13,8 +13,8 @@ while true ; do
   if [ -z "$result" ] ; then
 echo 'CONNECTED TO DEVICE!'
 
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 mount -o rw,union,update /
-sshpass -p 'alpine' scp -P 2222 bypass_scripts/oc34n_activation_server_13_x/RaptorActivation.pem root@localhost:/System/Library/PrivateFrameworks/MobileActivation.framework/Support/Certificates/RaptorActivation.pem
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 mount -o rw,union,update /
+sshpass -p 'alpine' scp -P 1111 bypass_scripts/oc34n_activation_server_13_x/RaptorActivation.pem root@localhost:/System/Library/PrivateFrameworks/MobileActivation.framework/Support/Certificates/RaptorActivation.pem
 ideviceactivation activate -s http://oc34n.website/pentest/activ8.php
 echo ""
 echo "YOU CAN NOW ACCESS THE SPRINGBOARD"
@@ -22,29 +22,29 @@ echo "PLEASE INSTALL CYDIA AND DO COMPLETE UPGRADE"
 echo "AFTER UPGRADE INSTALL CYDIA SUBSTRATE"
 read -p "PRESS ENTER TO CONTINUE!"
 echo ""
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 killall CommCenter && killall CommCenterMobileHelper
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall CommCenter && killall CommCenterMobileHelper
 sshpass -p 'alpine' scp -P 2222 bypass_scripts/oc34n_activation_server_13_x/untethered.dylib root@localhost:/Library/MobileSubstrate/DynamicLibraries/untethered.dylib
 sshpass -p 'alpine' scp -P 2222 bypass_scripts/oc34n_activation_server_13_x/untethered.plist root@localhost:/Library/MobileSubstrate/DynamicLibraries/untethered.plist
 sshpass -p 'alpine' scp -P 2222 bypass_scripts/oc34n_activation_server_13_x/iuntethered.dylib root@localhost:/Library/MobileSubstrate/DynamicLibraries/iuntethered.dylib
 sshpass -p 'alpine' scp -P 2222 bypass_scripts/oc34n_activation_server_13_x/iuntethered.plist root@localhost:/Library/MobileSubstrate/DynamicLibraries/iuntethered.plist
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 ldrestart
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 ldrestart
 sleep 6
 ideviceactivation activate -s https://oc34n.website/pentest/activ8.php > /dev/null
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.dylib
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.plist
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 ldrestart
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.dylib
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.plist
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 ldrestart
 sleep 6
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 killall backboardd
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 killall thermalmonitord
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 killall lockdownd
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall backboardd
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall thermalmonitord
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall lockdownd
 sshpass -p 'alpine' scp -P 2222 bypass_scripts/oc34n_activation_server_13_x/iuntethered.dylib root@localhost:/Library/MobileSubstrate/DynamicLibraries/iuntethered.dylib
 sshpass -p 'alpine' scp -P 2222 bypass_scripts/oc34n_activation_server_13_x/iuntethered.plist root@localhost:/Library/MobileSubstrate/DynamicLibraries/iuntethered.plist
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 uicache --all
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 ldrestart
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.dylib
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.plist
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 uicache --all
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 ldrestart
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 uicache --all
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 ldrestart
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.dylib
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 rm /Library/MobileSubstrate/DynamicLibraries/iuntethered.plist
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 uicache --all
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 ldrestart
 sleep 15
 ideviceactivation activate -s http://oc34n.website/pentest/activ8.php
 sleep 5
