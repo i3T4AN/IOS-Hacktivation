@@ -8,14 +8,14 @@ while true ; do
   sleep 1
   if [ -z "$result" ] ; then
 echo 'CONNECTED TO DEVICE!'
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 mount -o rw,union,update /
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 mount -o rw,union,update /
 sshpass -p 'alpine' scp -P 2222 bypass_scripts/mobileactivationd_13_x/mobileactivationd root@localhost:/usr/libexec/mobileactivationd
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 chmod 755 /usr/libexec/mobileactivationd
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 launchctl unload /System/Library/LaunchDaemons/com.apple.mobileactivationd.plist
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 launchctl load /System/Library/LaunchDaemons/com.apple.mobileactivationd.plist
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 uicache -a
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 killall backboardd
-sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 killall SpringBoard
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 chmod 755 /usr/libexec/mobileactivationd
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 launchctl unload /System/Library/LaunchDaemons/com.apple.mobileactivationd.plist
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 launchctl load /System/Library/LaunchDaemons/com.apple.mobileactivationd.plist
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 uicache -a
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall backboardd
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall SpringBoard
 pgrep -f 'tcprelay.py' | xargs kill >/dev/null 2>&1
     break
   fi
