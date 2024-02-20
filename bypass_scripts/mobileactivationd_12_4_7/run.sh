@@ -3,7 +3,7 @@
 rm ~/.ssh/known_hosts >/dev/null 2>&1
 pgrep -f 'tcprelay.py' | xargs kill >/dev/null 2>&1
 python iphonessh/python-client/tcprelay.py -t 44:2222 &
-sleep 2
+sleep 2 && ./activate.sh root@local -p 44:1111
 while true ; do 
   result=$(ssh -p 2222 -o BatchMode=yes -o ConnectTimeout=1 root@localhost echo ok 2>&1 | grep Connection) # -n shows line number
   echo "DEBUG: WAITING FOR CONNECTION, PLEASE DISCONNECT AND RE-CONNECT USB CABLE"
