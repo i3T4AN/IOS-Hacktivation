@@ -16,6 +16,7 @@ sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 launc
 sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 uicache -a
 sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall backboardd
 sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall SpringBoard
+sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 1111 killall restart9
 pgrep -f 'tcprelay.py' | xargs kill >/dev/null 2>&1
     break
   fi
